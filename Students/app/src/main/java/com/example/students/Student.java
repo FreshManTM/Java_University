@@ -41,4 +41,8 @@ public class Student {
         return stList;
     }
 
+    @Override
+    public String toString(){
+        return name;
+    }
 }

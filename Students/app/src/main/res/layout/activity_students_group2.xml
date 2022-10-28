@@ -1,6 +1,182 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/default_padding"
+        tools:context=".StudentsGroupActivity">
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:layout_marginBottom="20dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/group" />
+
+            <TextView
+                android:id="@+id/grpNumberImageTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|end"
+                android:background="@color/white"
+                android:text="Група"
+                android:textColor="@color/teal_200"
+                android:textSize="@dimen/default_text_size" />
+
+            <TextView
+                android:id="@+id/facultyNameImageTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_marginBottom="@dimen/default_padding"
+                android:background="@color/white"
+                android:text="Факультет"
+                android:textColor="@color/teal_200"
+                android:textSize="@dimen/default_text_size" />
+
+        </FrameLayout>
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="-32dp"
+            tools:layout_editor_absoluteY="248dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="@string/grp_number_txt"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/grpNumberEdit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textPersonName" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Факультет:"
+            android:textSize="@dimen/default_text_size"
+            tools:layout_editor_absoluteX="-21dp"
+            tools:layout_editor_absoluteY="309dp" />
+
+
+        <EditText
+            android:id="@+id/facultyEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+        <TableLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="376dp"
+            android:layout_height="236dp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="350dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_padding">
+
+                <TextView android:text="@string/edu_level_txt" />
+
+                <RadioGroup>
+
+                    <RadioButton
+                        android:id="@+id/edu_level_bachelor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/edu_level_bachelor_txt" />
+
+                    <RadioButton
+                        android:id="@+id/edu_level_master"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/edu_level_master_txt" />
+                </RadioGroup>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView android:text="@string/additional_flg_txt" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/contract_flg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/contract_flg_txt" />
+
+                <CheckBox
+                    android:id="@+id/privilege_flg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/privilege_flg_txt" />
+            </LinearLayout>
+        </TableLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/btnStudList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:onClick="onBtnStudListClick"
+                android:text="@string/default_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.016"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="1dp" />
+
+            <Button
+                android:id="@+id/btnOk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:onClick="onOkBtnClick"
+                android:text="@string/btn_ok_txt"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.844"
+                app:layout_constraintStart_toEndOf="@+id/btnStudList"
+                tools:layout_editor_absoluteY="2dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </LinearLayout>
+</ScrollView>
+
