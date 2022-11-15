@@ -3,6 +3,7 @@ package com.example.students;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
@@ -15,14 +16,16 @@ public class StudentsGroupActivity extends AppCompatActivity {
 
     public static final String GROUP_NUMBER = "groupnumber";
 
+    private StudentsGroup group;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_students_group2);
 
         Intent intent = getIntent();
-        String grpNumber = intent.getStringExtra(GROUP_NUMBER);
-        StudentsGroup  group = StudentsGroup.getGroup(grpNumber);
+        int grpNumber = intent.getIntExtra(GROUP_NUMBER,0);
+        group = null;
+        SQLiteOpenHelper sqLiteOpenHelper = new StudentsDatabaseHelper(this);
 
         EditText txtGrpNumber = (EditText) findViewById(R.id.grpNumberEdit);
         txtGrpNumber.setText(group.getNumber());
@@ -74,10 +77,8 @@ public class StudentsGroupActivity extends AppCompatActivity {
         Toast.makeText(this,outString,Toast.LENGTH_LONG).show();
     }
     public void onBtnStudListClick(View view){
-        Intent localIntent = getIntent();
-        String group = localIntent.getStringExtra(GROUP_NUMBER);
         Intent newIntent = new Intent(this, StudentsListActivity.class);
-        newIntent.putExtra(StudentsListActivity.GROUP_NUMBER, group);
+        newIntent.putExtra(StudentsListActivity.GROUP_NUMBER, group.getId());
         startActivity(newIntent);
     }
 }

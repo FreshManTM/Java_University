@@ -31,6 +31,9 @@ public class Student {
             )
     );
 
+    public static ArrayList<Student> getStudents(){
+        return getStudents("");
+    }
     public static ArrayList<Student> getStudents(String groupNumber){
         ArrayList<Student> stList = new ArrayList<>();
         for(Student s: students){

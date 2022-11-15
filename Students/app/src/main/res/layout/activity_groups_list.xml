@@ -10,15 +10,6 @@
     android:layout_marginBottom="8dp"
     tools:context=".GroupsListActivity">
 
-    <Button
-        android:id="@+id/btnGrpAdd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="+"
-        android:onClick="onGrpAddClick"
-        tools:layout_editor_absoluteX="285dp"
-        tools:layout_editor_absoluteY="16dp" />
-
     <ListView
         android:id="@+id/groups_list"
         android:layout_width="0dp"

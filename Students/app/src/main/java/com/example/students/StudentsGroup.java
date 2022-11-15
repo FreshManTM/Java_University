@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class StudentsGroup {
+    private int id;
     private String  number;
     private String facultyName;
     private int educationLevel;
@@ -16,6 +17,8 @@ public class StudentsGroup {
         this.educationLevel = educationLevel;
         this.contractExistsFlg = contractExistsFlg;
         this.privilegeExistsFlg = privilageExistsFlg;
+    }
+    public StudentsGroup(int id, String number, String facultyName, int educationLevel, boolean contractExistsFlg, boolean privilageExistsFlg){
     }
 
     public String getNumber(){
@@ -34,6 +37,9 @@ public class StudentsGroup {
     }
     public boolean isPrivilegeExistsFlg(){
         return privilegeExistsFlg;
+    }
+    public int getId(){
+        return id;
     }
 
     private static ArrayList<StudentsGroup> groups = new ArrayList<StudentsGroup>(

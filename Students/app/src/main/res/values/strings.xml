@@ -26,4 +26,5 @@
     <string name="contract_flg_txt">наявність контрактників</string>
     <string name="privilege_flg_txt">наявність пільговиків</string>
 
+    <string name="btn_share">Поділитися</string>
 </resources>

@@ -19,6 +19,8 @@
             android:parentActivityName=".GroupsListActivity"/>
         <activity
             android:name=".GroupsListActivity"
+            android:parentActivityName=".MainActivity"
+            android:label="Список груп"
             android:exported="false" />
         <activity
             android:name=".StudentsGroupActivity"
